@@ -1,0 +1,12 @@
+{
+  "name": "com.umbrason.lightweight-serialization",
+  "version": "1.0.0",
+  "displayName": "Lightweight-Serialization",
+  "description": "",
+  "keywords": [    
+  ],
+  "author": {
+    "name": "Umbrason"
+  },
+  "hideInEditor": false
+}
