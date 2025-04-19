@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Globalization;
 
 public class YAMLSerializer : ISerializer, IDisposable
 {
@@ -17,8 +18,8 @@ public class YAMLSerializer : ISerializer, IDisposable
         var lineStart = $"{new string('\t', fullName.PadLeft(1).PadRight(1).Split('.').Length - 1)}{fieldName}:";
         file.WriteLine($"{lineStart}{value}");
     }
-    public void WriteBool(string name, bool b) => WriteYAMLLine(name, b.ToString());
-    public void WriteFloat(string name, float f) => WriteYAMLLine(name, f.ToString());
-    public void WriteInt(string name, int i) => WriteYAMLLine(name, i.ToString());
+    public void WriteBool(string name, bool b) => WriteYAMLLine(name, b.ToString(CultureInfo.InvariantCulture));
+    public void WriteFloat(string name, float f) => WriteYAMLLine(name, f.ToString(CultureInfo.InvariantCulture));
+    public void WriteInt(string name, int i) => WriteYAMLLine(name, i.ToString(CultureInfo.InvariantCulture));
     public void WriteString(string name, string s) => WriteYAMLLine(name, s);
 }
