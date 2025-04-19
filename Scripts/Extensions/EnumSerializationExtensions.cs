@@ -4,5 +4,5 @@ public static class EnumSerializationExtensions
         => serializer.WriteInt(name, System.Convert.ToInt32(value));
 
     public static T ReadEnum<T>(this IDeserializer deserializer, string name) where T : System.Enum
-        => System.Enum.ToObject(typeof(T), deserializer.ReadInt(name));
+        => (T)System.Enum.ToObject(typeof(T), deserializer.ReadInt(name));
 }
