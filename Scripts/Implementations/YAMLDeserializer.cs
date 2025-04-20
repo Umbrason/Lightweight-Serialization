@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-
+using System.Globalization;
 
 public class YAMLDeserializer : IDeserializer, IDisposable
 {
@@ -24,9 +24,9 @@ public class YAMLDeserializer : IDeserializer, IDisposable
         }
         return line.Substring(lineStart.Length);
     }
-    public bool ReadBool(string name) => bool.Parse(ReadYAMLLine(name));
-    public float ReadFloat(string name) => float.Parse(ReadYAMLLine(name));
-    public int ReadInt(string name) => int.Parse(ReadYAMLLine(name));
+    public bool ReadBool(string name) => bool.Parse(ReadYAMLLine(name), CultureInfo.InvariantCulture);
+    public float ReadFloat(string name) => float.Parse(ReadYAMLLine(name), CultureInfo.InvariantCulture);
+    public int ReadInt(string name) => int.Parse(ReadYAMLLine(name), CultureInfo.InvariantCulture);
     public string ReadString(string name) => ReadYAMLLine(name);
 
 
