@@ -24,7 +24,7 @@ public class YAMLDeserializer : IDeserializer, IDisposable
         }
         return line.Substring(lineStart.Length);
     }
-    public bool ReadBool(string name) => bool.Parse(ReadYAMLLine(name), CultureInfo.InvariantCulture);
+    public bool ReadBool(string name) => bool.Parse(ReadYAMLLine(name));
     public float ReadFloat(string name) => float.Parse(ReadYAMLLine(name), CultureInfo.InvariantCulture);
     public int ReadInt(string name) => int.Parse(ReadYAMLLine(name), CultureInfo.InvariantCulture);
     public string ReadString(string name) => ReadYAMLLine(name);
